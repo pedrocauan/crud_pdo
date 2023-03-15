@@ -47,7 +47,7 @@ $cmd = $pdo-> prepare("SELECT * FROM pessoa WHERE id = :id");
 $cmd->bindValue(":id", "3");
 $cmd->execute();
 
-$result = $cmd-> fetch(PDO::FETCH_ASSOC);
+$result = $cmd-> fetch(PDO::FETCH_NUM);
 echo "<pre>";
 print_r($result);
 echo "</pre>";
@@ -58,6 +58,11 @@ foreach($result as $key => $value){
     echo "Valor: $value <br>";
     echo "<br>";    
 }
+
+// for($i = 0; $i < count($result); $i++){
+//     echo "Valor: $result[$i] <br>";
+//     echo "<br>";   
+// }
 
 
 
