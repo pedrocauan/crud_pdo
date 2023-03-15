@@ -25,5 +25,11 @@ $res-> execute();
 //2 forma
 $pdo-> query("INSERT INTO pessoa(nome, telefone, email)VALUES('carlos', '11553455', 'carlete@gmail.com')");
 
+// --------------- DELETE  -----------------
+$cmd = $pdo-> prepare("DELETE FROM pessoa WHERE id = :id ");
+$id = 2;
+$cmd-> bindValue(":id", $id);
+$cmd-> execute();
+
 
 ?>
